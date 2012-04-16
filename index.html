@@ -1,0 +1,206 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Préparez un serveur aux petits oignons avec Chef</title>
+
+		<meta name="description" content="Préparez un serveur aux petits oignons avec Chef">
+		<meta name="author" content="Geoffroy Couprie">
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<link rel="stylesheet" href="lib/zenburn.css">
+	</head>
+	
+	<body>
+		
+		<div id="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Cooking with Chef</h1>
+					<h3 class="inverted">Préparons un serveur aux petits oignons</h3>
+					<script>
+						// Delicously hacky. Look away.
+						if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) )
+						document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+					</script>
+				</section>
+				
+				<section>
+					<h2>C'est qui le Chef?</h2>
+					<p>
+                      Un outil de gestion de configuration
+					</p>
+                    <p class="fragment">Comme Puppet...</p>
+                    <p class="fragment">...ou CFEngine</p>
+
+					<!--<p>
+						<i><small>- <a href="http://hakim.se">Geoffroy Couprie</a> / <a href="http://twitter.com/gcouprie">@gcouprie</a></small></i>
+					</p>-->
+				</section>
+				
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>gestion de wat?</h2>
+						<p>
+                            Maitrise de l'ensemble des serveurs
+						</p>
+					</section>
+					<section>
+						<h2>gestion de wat?</h2>
+						<p>Installation automatisée des packages</p>
+					</section>
+                    <section>
+                        <h2>gestion de wat?</h2>
+                        <p>Configuration à partir de templates</p>
+                    </section>
+                    <section>
+                        <h2>gestion de wat?</h2>
+                        <p>Provisioning rapide et reproductible</p>
+                    </section>
+                    <section>
+                        <h2>gestion de wat?</h2>
+                        <p>Idempotent</p>
+                    </section>
+                </section>
+
+
+				<section>
+					<h2>IdemWAAAAT?</h2>
+					<p>
+						Idempotent: l'effet ne s'applique qu'une fois
+					</p>
+				</section>
+
+				<section>
+					<h2>Architecture</h2>
+					<ul>
+                      <li>Chef Server</li>
+                      <li>Knife</li>
+                      <li  class="fragment">Chef-solo</li>
+				</section>
+
+				<section>
+					<h2>Cookbook</h2>
+					<p>C'est un livre de recettes</p>
+                    <p class="fragment"><small><i>(Anglais LV1, quand même!)</i></small></p>
+				</section>
+                
+                <section>
+                    <h2>Recipe</h2>
+                    <p>Réalise une action concrète</p>
+                    <p>Exemple: installer mod_php5</p>
+                </section>
+
+                <section>
+                    <h2>Databag</h2>
+                    <p>Set de données réutilisable</p>
+                </section>
+
+                <section>
+                    <h2>Node</h2>
+                    <p>Configuration d'un serveur spécifique</p>
+                    <p>Indique les recettes à suivre, l'IP, le nom du serveur, etc</p>
+                </section>
+
+                <section>
+                    <h2>Langage(s)</h2>
+                    <p>Tout est écrit en Ruby!</p>
+                    <p class="fragment">Sauf la configuration des nodes: JSON</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Demo time!</h2>
+                    </section>
+                    <section>
+                        <h2>Si vous lisez ceci, c'est que ma démo vient de planter</h2>
+                    </section>
+                </section>
+
+				<section>
+					<h2>Usage</h2>
+                    <ul>
+                        <li>Large communauté</li>
+                        <li>Nombreux cookbooks pré écrits (opscode, 37 Signals...)</li>
+                        <li class="fragment">Facile à modifier</li>
+                        <li class="fragment">C'est du CODE</li>
+                    </ul>
+				</section>
+
+                <section>
+                    <h2>Conclusion</h2>
+                    <p>Chef, c'est bon, mangez-en</p>
+                </section>
+
+                <section>
+                    <h1>Questions, bière, etc?</h1>
+                </section>
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+		
+		<script src="js/reveal.js"></script>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/highlight.js"></script>
+		<script src="lib/classList.js"></script>
+		
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+	</body>
+</html>
