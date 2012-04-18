@@ -1,0 +1,8 @@
+{
+  "run_list": [ "recipe[example]" ],
+  "ssh_keys": {
+    "root": "ssh-rsa AAAAAAA"
+  },
+  "servername": "debianchef.com",
+  "administrator": "geo@debianchef.com"
+}
